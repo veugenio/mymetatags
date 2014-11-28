@@ -1,0 +1,4 @@
+name = Mymetatags
+description = Example module
+package = Examples
+core = 7.x

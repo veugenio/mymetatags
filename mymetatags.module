@@ -1,0 +1,20 @@
+<?php
+
+function mymetatags_permission() {
+	return array(
+    'manage page meta tags' => array(
+      'title' => t('Manage page meta tags'),
+      'description' => t('Manage page meta tags.'),
+    ),
+  );
+}
+
+function mymetatags_menu() {
+	$items['admin/config/search/mymetatags'] = array(
+      'page callback' => '_mymetatags_page',
+      'file' => 'mymetatags.pages.inc',
+      'access arguments' => array('manage page meta tags'),
+      'type' => MENU_NORMAL_ITEM,
+    );
+    return $items;
+}
