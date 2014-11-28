@@ -1,0 +1,31 @@
+<?php
+
+function mymetatags_schema() {
+  $schema['mymetatags'] = array(
+    
+    'description' => 'My metatags',
+    'fields' => array(
+      'mtid' => array(
+        'description' => 'The primary identifier.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'normal_path' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'default' => '',
+      ),
+      'data' => array(
+        'type' => 'text',
+        'size' => 'big'
+      )
+    ),
+    'unique keys' => array(
+      'mtid' => array('mtid'),
+      'normal_path' => array('normal_path'),
+    ),
+    'primary key' => array('mtid'),
+  );
+  return $schema;
+}
